@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+		        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+		        crossorigin="anonymous"></script>-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		
+		
+
+	   <style>
+        .table td, .table th {
+            text-align: left;
+        }
+
+        body {
+            text-shadow: none;
+            font-size: 12px;
+        }
+
+        .btn {
+            font-size: 12px;
+        }
+
+        .dropdown-menu {
+            font-size: 12px;
+
+        }
+
+        .form-control {
+            font-size: 12px;
+        }
+
+        .row {
+            overflow: hidden;
+        }
+
+        [class*="col-"] {
+            margin-bottom: -99999px;
+            padding-bottom: 99999px;
+        }
+
+        .card {
+            height: 100%;
+        }
+
+        .fullheight {
+            height: 100%;
+        }
+
+        .ajax-loader {
+            margin: 0 auto;
+            display: block;
+        }
+        #accordion5 {
+            display: none;
+        }
+
+    </style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="/index">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled"  href="#" target="_blank">Api</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="/ec2mgmt">EC2</a>
+				</li>
+			</ul>
+			<br/>
+
+			<div class="col-md-6" style="text-align: left;" >
+				<h4>
+					HTTP Burst AWS
+				</h4>
+				<tr>
+				</tr>
+				<br/>
+			</div>
+
+		
+
+			<form method="POST" accept-charset="UTF-8" id="my_form">
+		        <input type="hidden" name="type" value="single" id="sendmytype" name="sendmytype">
+
+		        <div class="row">
+
+			        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+		                <div id="accordion4" role="tablist" aria-multiselectable="true" class="fullheight">
+
+		                    <div class="card">
+		                        <div class="card-header" role="tab" id="headingOne4">
+		                            <a data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4"
+		                               aria-expanded="true" aria-controls="collapseOne4">API Gateway</a>
+		                        </div>
+		                        <div id="collapseOne4" class="collapse show" role="tabpanel" aria-labelledby="headingOne4">
+		                            <div class="card-block">
+		                            	<div class="input-group">
+			                                <label class="sr-only"></label>
+			                                <span class="input-group-addon" style="width: 90px;">URL</span>
+			                                <input id="URL" name="URL" type="text" class="form-control" aria-describedby="sizing-addon2">
+			                            </div>
+			                            <div class="input-group">
+			                                <label class="sr-only"></label>
+			                                <span class="input-group-addon" style="width: 90px;">#Req</span>
+			                                <input id="NumRequest" name="NumRequest" type="text" class="form-control" aria-describedby="sizing-addon2">
+			                            </div>
+			                            <br/>
+										An unauthorized URL:
+			                            <div class="input-group">
+			                                <label class="sr-only"></label>
+			                                <span class="input-group-addon" style="width: 90px;">UnURL</span>
+			                                <input id="UnURL" name="UnURL" type="text" class="form-control" aria-describedby="sizing-addon2">
+			                            </div>
+			                            <br/>
+			                            <label class="form-check-label">
+	                                    <input type="checkbox" class="form-check-input" name="403">
+		                                    Generate 403
+		                                </label>
+		                                <label class="form-check-label">
+	                                    <input type="checkbox" class="form-check-input" name="401">
+		                                    Generate 401
+		                                </label>
+		                                <br/>
+		                                <br/>
+		                            	<button class="btn btn-outline-primary" type="submit" formaction="/apigwsend">Launch</button>		                                
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		           
+
+		     
+
+		        <br/>
+
+
+			        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+		                <div id="accordion4" role="tablist" aria-multiselectable="true" class="fullheight">
+
+		                    <div class="card">
+		                        <div class="card-header" role="tab" id="headingOne4">
+		                            <a data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4"
+		                               aria-expanded="true" aria-controls="collapseOne4">Lambda</a>
+		                        </div>
+		                        <div id="collapseOne4" class="collapse show" role="tabpanel" aria-labelledby="headingOne4">
+		                            <div class="card-block">
+		                            	<button class="btn btn-outline-primary" type="submit" formaction="/lambdasend">Launch</button>		                                
+
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+
+
+		    </form>
+
+
+
+			
+
+			<br/>
+			<footer class="footer">
+	      		<div class="container">
+	        		<span class="text-muted">Made by Somebody.</span>
+	      		</div>
+   			</footer>
+		</div>	
+	</body>
+</html>

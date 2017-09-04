@@ -1,0 +1,6 @@
+src/github.com
+source-env
+source-env-ec2
+pkg/
+bin/
+temp.go
