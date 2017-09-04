@@ -4,3 +4,4 @@ source-env-ec2
 pkg/
 bin/
 temp.go
+mystruct

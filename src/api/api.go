@@ -1,4 +1,4 @@
-// Package api GalAirCheck.
+// Package api BURSTAWS.
 //
 // the purpose of this package is to provide Api Interface
 //

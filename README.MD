@@ -15,7 +15,7 @@ You need to have:
 ### Compilation
 
 ```sh
-git clone http://YOURUIDN@code.int.be.continental.cloud/scm/toam/awsburst.git
+git clone awsburst.git
 go build -o awsburst
 ```
 

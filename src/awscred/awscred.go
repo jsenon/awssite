@@ -9,10 +9,9 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 )
 
-
 // Func to manage the Assume role needed when you switch your account in AWS
 // Need in input :
-// 		ARN need to switch 
+// 		ARN need to switch
 // 		Region
 //		Session PTR
 func CreateConfig(arn string, externalID string, region string, sess *session.Session) aws.Config {
